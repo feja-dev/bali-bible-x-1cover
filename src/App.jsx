@@ -919,7 +919,7 @@ function renderTab(tab) {
 // ─── Root App ──────────────────────────────────────────────────────────────────
 
 export default function App() {
-  const [active, setActive] = useState(null);
+  const [active, setActive] = useState("Situation & Overview");
   const tabBarRef = useRef(null);
   const contentRef = useRef(null);
 
@@ -1000,34 +1000,14 @@ export default function App() {
 
       {/* ── Tab content ──────────────────────────────────────── */}
       <div ref={contentRef} className="min-h-[60vh] px-16 pb-32 pt-12 md:px-24">
-        {active === null ? (
-          <div className="max-w-3xl space-y-5">
-            <p className="text-xs uppercase tracking-widest text-[#2BCDC4]">Overview</p>
-            <p className="text-base leading-7 text-[#666]">
-              Select a section above to explore the full campaign strategy.
-            </p>
-            <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-4">
-              {TABS.map((tab) => (
-                <button
-                  key={tab}
-                  onClick={() => handleTabChange(tab)}
-                  className="rounded-xl border border-[#e5e5e5] bg-white p-4 text-left text-sm text-[#666] transition hover:border-[#2BCDC4]/60 hover:bg-[#2BCDC4]/5 hover:text-[#1a1a1a]"
-                >
-                  {tab}
-                </button>
-              ))}
-            </div>
-          </div>
-        ) : (
-          <motion.div
-            key={active}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.15 }}
-          >
-            {renderTab(active)}
-          </motion.div>
-        )}
+        <motion.div
+          key={active}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.15 }}
+        >
+          {renderTab(active)}
+        </motion.div>
       </div>
 
       <BottomNav active={active} onNavigate={handleTabChange} />
