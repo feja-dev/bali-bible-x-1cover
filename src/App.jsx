@@ -202,16 +202,60 @@ function GoalsContent() {
   return (
     <div>
       <SectionTitle title="Goals & Objectives" />
-      <div className="grid gap-4 md:grid-cols-3">
-        <Card icon={Globe} title="Awareness, Traffic and Reach">
-          <Updated>Drive meaningful brand awareness for 1Cover across The Bali Bible's highly engaged audience of Australian Bali travellers — reaching them at the point of travel inspiration and planning.</Updated>
-        </Card>
-        <Card icon={DollarSign} title="Ultimately — Sales">
-          <Updated>While The Bali Bible's focus is reach and distribution, 1Cover's goal is conversion — turning awareness into policy purchases from an audience actively planning Bali travel.</Updated>
-        </Card>
-        <Card icon={TrendingUp} title="Social Media Growth and Chatter">
-          <Updated>Generate online conversation and community engagement around 1Cover within Australia's Bali travel community, building brand familiarity and trust through relevant, editorial-led content.</Updated>
-        </Card>
+      <div className="space-y-5">
+        <div className="rounded-2xl border border-[#e5e5e5] bg-white p-7">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[#2BCDC4]">Primary Objectives</p>
+          <div className="space-y-4">
+            {[
+              { icon: Globe, title: "Brand Awareness", body: "Increase awareness of 1Cover amongst Australian travellers researching and planning trips to Bali." },
+              { icon: TrendingUp, title: "Reach & Engagement", body: "Leverage The Bali Bible's audience and content ecosystem to generate meaningful reach, engagement and conversation across editorial, social and email channels." },
+              { icon: FileText, title: "Website Traffic", body: "Drive qualified traffic to 1Cover through integrated content, calls-to-action and promotional offers." },
+            ].map(({ icon: Icon, title, body }) => (
+              <div key={title} className="flex gap-4">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#2BCDC4]/10 text-[#2BCDC4]">
+                  <Icon size={15} />
+                </div>
+                <div>
+                  <p className="mb-1 text-sm font-medium text-[#1a1a1a]">{title}</p>
+                  <p className="text-sm leading-6 text-[#666]">{body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="grid gap-5 md:grid-cols-2">
+          <div className="rounded-2xl border border-[#e5e5e5] bg-white p-7">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[#2BCDC4]">Secondary Objectives</p>
+            <div className="space-y-4">
+              {[
+                { icon: Smartphone, title: "Product Consideration", body: "Position 1Cover as a trusted travel insurance provider through practical, relevant and destination-led content." },
+                { icon: TrendingUp, title: "Community Growth", body: "Increase visibility and social engagement through content designed to encourage sharing, discussion and audience interaction." },
+              ].map(({ icon: Icon, title, body }) => (
+                <div key={title} className="flex gap-4">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#2BCDC4]/10 text-[#2BCDC4]">
+                    <Icon size={15} />
+                  </div>
+                  <div>
+                    <p className="mb-1 text-sm font-medium text-[#1a1a1a]">{title}</p>
+                    <p className="text-sm leading-6 text-[#666]">{body}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="rounded-2xl border border-[#2BCDC4]/30 bg-[#2BCDC4]/5 p-7">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[#2BCDC4]">Long-Term Objective</p>
+            <div className="flex gap-4">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#2BCDC4]/10 text-[#2BCDC4]">
+                <DollarSign size={15} />
+              </div>
+              <div>
+                <p className="mb-1 text-sm font-medium text-[#1a1a1a]">Sales & Conversion</p>
+                <p className="text-sm leading-6 text-[#666]">While The Bali Bible's role is primarily focused on awareness, engagement and traffic generation, the ultimate objective is to support 1Cover's broader conversion and customer acquisition goals.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -267,30 +311,40 @@ function MessagingContent() {
 }
 
 function AudienceContent() {
-  const segments = [
-    {
-      label: "Age & Demographics",
-      text: <Updated>25–45 is the sweet spot — broad appeal across genders. Travel insurance uptake is lower with families, though there may be an opportunity to speak to that segment given 1Cover's competitive family pricing.</Updated>,
-    },
-    {
-      label: "Geography",
-      text: <Updated>National audience. Perth has a higher rate of Bali travel, but the campaign targets Australians across all states planning or considering a Bali trip.</Updated>,
-    },
-    {
-      label: "Purchase Behaviour",
-      text: <Updated>High intent, last-minute buyers. Most purchase within a week of departure — sometimes at the airport. Messaging should meet them in that window, creating urgency without friction.</Updated>,
-    },
-  ];
   return (
     <div>
       <SectionTitle title="1Cover Target Audience" />
-      <div className="max-w-2xl space-y-4">
-        {segments.map(({ label, text }) => (
-          <div key={label} className="rounded-2xl border border-[#e5e5e5] bg-white p-6">
-            <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2BCDC4]">{label}</p>
-            <p className="text-base leading-7 text-[#1a1a1a]">{text}</p>
+      <div className="grid gap-4 md:grid-cols-2">
+        <div className="rounded-2xl border border-[#e5e5e5] bg-white p-6">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2BCDC4]">Primary Audience</p>
+          <p className="mb-3 text-base font-light text-[#1a1a1a]">Australian travellers aged 25–45 planning leisure travel to Bali.</p>
+          <BulletList items={[
+            "Actively researches Bali prior to travel",
+            "Engages with destination content and travel inspiration",
+            "Values convenience, flexibility and experiences",
+            "Comfortable booking travel online",
+            "Often purchases travel insurance close to departure",
+          ]} />
+        </div>
+        <div className="rounded-2xl border border-[#e5e5e5] bg-white p-6">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2BCDC4]">Secondary Audience</p>
+          <p className="mb-3 text-base font-light text-[#1a1a1a]">Families planning Bali holidays.</p>
+          <p className="text-sm leading-7 text-[#666]">Family travel continues to be a significant growth segment and presents an opportunity for future content development and targeting.</p>
+        </div>
+        <div className="rounded-2xl border border-[#e5e5e5] bg-white p-6">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2BCDC4]">Geographic Focus</p>
+          <p className="mb-3 text-sm leading-6 text-[#666]">National Australian audience, with particular relevance in:</p>
+          <div className="flex flex-wrap gap-2">
+            {["Western Australia", "Victoria", "New South Wales", "Queensland"].map(s => (
+              <span key={s} className="rounded-full border border-[#e5e5e5] px-3 py-1 text-xs text-[#666]">{s}</span>
+            ))}
           </div>
-        ))}
+          <p className="mt-3 text-xs leading-5 text-[#999]">Perth remains one of Australia's strongest Bali travel markets due to flight accessibility and frequency.</p>
+        </div>
+        <div className="rounded-2xl border border-[#e5e5e5] bg-white p-6">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2BCDC4]">Purchase Behaviour</p>
+          <p className="text-sm leading-7 text-[#666]">Travel insurance is often purchased in the final stages of trip planning — frequently within the week prior to departure and, in some cases, immediately before travel. Campaign messaging should focus on remaining visible throughout the travel planning journey, ensuring 1Cover is front-of-mind when travellers are ready to purchase.</p>
+        </div>
       </div>
     </div>
   );
@@ -419,69 +473,31 @@ const articles = [
 ];
 
 function EditorialSub() {
-  const [active, setActive] = useState("overview");
-  const current = articles.find(a => a.id === active);
-  const pickerTabs = [{ id: "overview", label: "Overview & Angles" }, ...articles];
-
   return (
-    <div className="space-y-6">
-      <SubTabBar
-        tabs={pickerTabs.map(t => t.label)}
-        active={pickerTabs.find(t => t.id === active)?.label ?? "Overview & Angles"}
-        onChange={(label) => {
-          const found = pickerTabs.find(t => t.label === label);
-          if (found) setActive(found.id);
-        }}
-      />
+    <div className="space-y-8">
 
-      {active === "overview" && (
-        <div className="space-y-6">
-          <div>
-            <p className="mb-4 text-sm font-medium text-[#1a1a1a]">Angles / Stories: Sej to explore:</p>
-            <div className="grid grid-cols-3 gap-4">
-              {["July Editorial:", "August Editorial:", "September Editorial:"].map(m => (
-                <div key={m} className="min-h-[80px] rounded-xl border border-dashed border-[#ccc] p-4">
-                  <p className="mb-2 text-sm font-medium text-[#999]">{m}</p>
-                  <p className="text-xs italic text-[#bbb]">TBC</p>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="rounded-xl border border-[#e5e5e5] bg-[#f8f9fa] p-6">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[#2BCDC4]">Notes</p>
-            <BulletList items={[
-              "Travel Mishaps - Bali Belly - everything we do is around that \"the one thing you need when 1 thing goes wrong, cancellations, breaking legs, (could we have some people in this- for example Jordan.",
-              "Scooters —",
-              "Families - not all travel insurers charge for dependants and we do - which may turn people off.",
-              "Tying into the visa stuff and knowing what you're covered for.",
-              "Doing Bali Right, Mistakes Australians Make in Bali, Adventure & Peace of Mind, Planning Ahead for Bali",
-            ]} />
-          </div>
-        </div>
-      )}
-
-      {current && (
-        <div className="grid gap-5 lg:grid-cols-[1fr_0.85fr]">
+      {articles.filter(a => a.id !== "bonus").map(article => (
+        <div key={article.id} className="grid gap-5 lg:grid-cols-[1fr_0.85fr]">
           <div className="rounded-xl border border-[#e5e5e5] bg-white p-7">
-            <Eyebrow>{current.month}</Eyebrow>
-            <h3 className="mb-5 text-xl font-light leading-snug text-[#1a1a1a]" style={SERIF}>{current.title}</h3>
-            {current.paras.map((p, i) => (
+            <Eyebrow>{article.month}</Eyebrow>
+            <h3 className="mb-5 text-xl font-light leading-snug text-[#1a1a1a]" style={SERIF}>{article.title}</h3>
+            {article.paras.map((p, i) => (
               <p key={i} className="mb-3 text-sm leading-7 text-[#666]">{p}</p>
             ))}
             <p className="mb-3 mt-5 text-xs font-semibold uppercase tracking-widest text-[#999]">This article would explore:</p>
-            <BulletList items={current.explore} />
-            {current.insurance && (
+            <BulletList items={article.explore} />
+            {article.insurance && (
               <div className="mt-5 rounded-lg border-l-4 border-[#2BCDC4] bg-[#2BCDC4]/8 p-4">
                 <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-[#2BCDC4]">Then naturally include insurance messaging:</p>
-                <p className="text-sm italic leading-6 text-[#555]">"{current.insurance}"</p>
+                <p className="text-sm italic leading-6 text-[#555]">"{article.insurance}"</p>
               </div>
             )}
           </div>
-          {current.deliverables.length > 0 && (
+          {article.deliverables.length > 0 && (
             <div className="rounded-xl border border-[#e5e5e5] bg-[#f8f9fa] p-6">
               <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[#999]">Supporting Deliverables</p>
               <div className="divide-y divide-[#f0f0f0]">
-                {current.deliverables.map((d, i) => (
+                {article.deliverables.map((d, i) => (
                   <div key={i} className="flex items-center gap-3 py-3">
                     <CheckCircle2 size={14} className="shrink-0 text-[#2BCDC4]" />
                     <span className="text-sm text-[#1a1a1a]">{d}</span>
@@ -491,7 +507,7 @@ function EditorialSub() {
             </div>
           )}
         </div>
-      )}
+      ))}
     </div>
   );
 }
@@ -547,7 +563,7 @@ function OrganicSocialSub() {
   return (
     <div className="space-y-5">
       <p className="max-w-2xl text-sm leading-7 text-[#666]">
-        <Updated>Organic social will be the primary driver of awareness and traffic throughout the campaign, with each editorial article supported by a suite of complementary content designed to maximise engagement and reach. All organic content will be boosted to relevant audiences.</Updated>
+        Organic social will be the primary driver of awareness and traffic throughout the campaign, with each editorial article supported by a suite of complementary content designed to maximise engagement and reach. All organic content will be boosted to relevant audiences.
       </p>
       <SubTabBar tabs={["July", "August", "September"]} active={activeMonth} onChange={setActiveMonth} />
       {current && (
@@ -555,18 +571,35 @@ function OrganicSocialSub() {
           <p className="mb-5 text-xs font-semibold uppercase tracking-widest text-[#999]">
             {current.month} — {current.article}
           </p>
-          <div className="space-y-3">
-            {current.assets.map(({ type, title, desc }) => (
-              <div key={type} className="rounded-xl border border-[#e5e5e5] bg-white p-5">
-                <div className="flex items-start gap-4">
-                  <span className={`mt-0.5 shrink-0 rounded-md px-2.5 py-1 text-xs font-semibold ${typeColor[type]}`}>{type}</span>
-                  <div>
-                    <p className="mb-1 text-sm font-medium text-[#1a1a1a]">{title}</p>
-                    <p className="text-sm leading-6 text-[#666]"><Updated>{desc}</Updated></p>
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-start">
+            <div className="flex-1 space-y-3">
+              {current.assets.map(({ type, title, desc }) => (
+                <div key={type} className="rounded-xl border border-[#e5e5e5] bg-white p-5">
+                  <div className="flex items-start gap-4">
+                    <span className={`mt-0.5 shrink-0 rounded-md px-2.5 py-1 text-xs font-semibold ${typeColor[type]}`}>{type}</span>
+                    <div>
+                      <p className="mb-1 text-sm font-medium text-[#1a1a1a]">{title}</p>
+                      <p className="text-sm leading-6 text-[#666]">{desc}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+            {(() => {
+              const seriesMap = { July: 0, August: 1, September: 2 };
+              const s = contentSeries[seriesMap[activeMonth]];
+              const imgs = s?.images.filter(Boolean) ?? [];
+              if (!imgs.length) return null;
+              return (
+                <div className={`flex shrink-0 flex-row flex-wrap gap-3 ${imgs.length > 1 ? "lg:w-[26rem]" : "lg:w-52"}`}>
+                  {imgs.map((src, i) => (
+                    <div key={i} className={`overflow-hidden rounded-xl border border-[#f0f0f0] ${imgs.length > 1 ? "w-40 lg:w-[calc(50%-6px)]" : "w-40 lg:w-full"}`}>
+                      <img src={src} alt={`${activeMonth} content ${i + 1}`} className="w-full h-auto block" />
+                    </div>
+                  ))}
+                </div>
+              );
+            })()}
           </div>
         </motion.div>
       )}
@@ -618,8 +651,8 @@ function EDMSub() {
                 <p className="text-sm font-medium text-[#1a1a1a]">{theme}</p>
               </div>
             </div>
-            <p className="mb-4 text-xs italic text-[#999]"><Updated>{positioning}</Updated></p>
-            <BulletList items={content.map(item => <Updated>{item}</Updated>)} />
+            <p className="mb-4 text-xs italic text-[#999]">{positioning}</p>
+            <BulletList items={content} />
           </div>
         ))}
       </div>
@@ -649,21 +682,37 @@ function PaidSocialSub() {
 }
 
 function ContentShootSub() {
+  const shootCategories = [
+    {
+      title: "Scooter Content",
+      items: ["Scenic scooter riding imagery", "Couple/friends exploring Bali", "Rice field roads and coastal routes", "Parking at cafés and local businesses", "Helmet and responsible riding shots"],
+    },
+    {
+      title: "Adventure Content",
+      items: ["Hiking and volcano scenery", "Waterfalls", "Surfing and snorkelling", "Active traveller moments", "Scenic landscapes"],
+    },
+    {
+      title: "Travel Lifestyle Content",
+      items: ["Airport arrivals", "Packing moments", "Café culture", "Exploring neighbourhoods", "Couples and friendship groups travelling together"],
+    },
+    {
+      title: "Insurance Integration",
+      items: ["Travel planning moments", "Mobile maps and itinerary checks", "Airport and travel documentation", "Subtle preparation-focused moments"],
+    },
+  ];
   return (
-    <div className="space-y-6">
-    <div className="max-w-xl rounded-xl border border-[#e5e5e5] bg-white p-8">
-      <div className="flex gap-5">
-        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#2BCDC4] text-white">
-          <Camera size={22} />
-        </div>
-        <div>
-          <h3 className="mb-3 text-xl font-light text-[#1a1a1a]" style={SERIF}>Content Shoot</h3>
-          <p className="text-sm leading-7 text-[#666]">
-            <Updated>Our shoot will centre on lifestyle and real Bali moments — capturing scooter culture, authentic street scenes, adventure experiences, and real people enjoying the island. Assets will be mapped directly to the social content planned above, ensuring every deliverable has purpose-built creative to match.</Updated>
-          </p>
-        </div>
+    <div className="space-y-5">
+      <p className="max-w-2xl text-sm leading-7 text-[#666]">
+        The content shoot will create a flexible asset library aligned to all three editorial themes — delivering 12 edited images and reels content.
+      </p>
+      <div className="grid gap-4 md:grid-cols-2">
+        {shootCategories.map(({ title, items }) => (
+          <div key={title} className="rounded-xl border border-[#e5e5e5] bg-white p-6">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[#2BCDC4]">{title}</p>
+            <BulletList items={items} />
+          </div>
+        ))}
       </div>
-    </div>
     </div>
   );
 }
@@ -727,23 +776,24 @@ function DeliveryContent() {
 }
 
 function TimelineContent() {
-  // start/end are 0-indexed month positions: 0=July, 1=August, 2=September
+  // start/end: 0=June, 1=July, 2=August, 3=September
   const rows = [
-    { label: "Article #1 — Scooter Culture",     start: 0, end: 0 },
-    { label: "Article #2 — Adventure Travel",     start: 1, end: 1 },
-    { label: "Article #3 — When Things Go Wrong", start: 2, end: 2 },
-    { label: "Instagram Reel + Story",            start: 0, end: 2 },
-    { label: "Facebook Post",                     start: 0, end: 2 },
-    { label: "TikTok Video",                      start: 0, end: 0 },
-    { label: "Paid Social Campaign",              start: 0, end: 2 },
-    { label: "Dedicated Solus eDM",               start: 0, end: 0 },
-    { label: "Shared Newsletter Inclusion",       start: 1, end: 1 },
-    { label: "eDM Placement",                     start: 2, end: 2 },
-    { label: "Homepage Banner",                   start: 0, end: 2 },
-    { label: "Photography Shoot",                 start: 1, end: 1 },
+    { label: "Strategy & Planning",              start: 0, end: 0 },
+    { label: "Content Shoot",                    start: 0, end: 0 },
+    { label: "Article #1 — Scooter Culture",     start: 1, end: 1 },
+    { label: "Article #2 — Adventure Travel",    start: 2, end: 2 },
+    { label: "Article #3 — When Things Go Wrong",start: 3, end: 3 },
+    { label: "Instagram Reel + Story",           start: 1, end: 3 },
+    { label: "Facebook Post",                    start: 1, end: 3 },
+    { label: "TikTok Video",                     start: 1, end: 1 },
+    { label: "Paid Social Campaign",             start: 1, end: 3 },
+    { label: "Dedicated Solus eDM",              start: 1, end: 1 },
+    { label: "Shared Newsletter Inclusion",      start: 2, end: 2 },
+    { label: "eDM Placement",                    start: 3, end: 3 },
+    { label: "Homepage Banner",                  start: 1, end: 3 },
   ];
-  const months = ["July", "August", "September"];
-  const COLS = 3;
+  const months = ["June", "July", "August", "September"];
+  const COLS = 4;
 
   return (
     <div>
@@ -768,8 +818,9 @@ function TimelineContent() {
                 <div className="w-[38%] text-sm text-[#1a1a1a]">{label}</div>
                 <div className="relative flex-1" style={{ height: 28 }}>
                   {/* subtle month dividers */}
-                  <div className="absolute inset-y-0 left-1/3 w-px bg-[#ececec]" />
-                  <div className="absolute inset-y-0 left-2/3 w-px bg-[#ececec]" />
+                  <div className="absolute inset-y-0 left-1/4 w-px bg-[#ececec]" />
+                  <div className="absolute inset-y-0 left-2/4 w-px bg-[#ececec]" />
+                  <div className="absolute inset-y-0 left-3/4 w-px bg-[#ececec]" />
                   {/* connected bar */}
                   <div
                     className="absolute top-1/2 -translate-y-1/2 h-3 rounded-full bg-[#2BCDC4]"
@@ -791,10 +842,10 @@ function NextStepsContent() {
       <SectionTitle title="Production & Next Steps" />
       <div className="max-w-xl rounded-2xl border border-[#e5e5e5] bg-white p-8">
         <p className="text-base leading-8 text-[#1a1a1a]">
-          We will aim to have all content go live each month during the middle of each month, with a 2 week lead time on reviews for the client.
+          Content will be scheduled to go live mid-month across July, August and September.
         </p>
         <p className="mt-5 text-base leading-8 text-[#1a1a1a]">
-          <Updated>Once you approve our approach, we will dive into production for month 1 and provide this by the start of July.</Updated>
+          To allow sufficient production, review and revision time, all content drafts will be supplied to 1Cover approximately two weeks prior to scheduled publication. This review period will ensure adequate time for feedback, approvals and any required compliance checks before content goes live.
         </p>
       </div>
     </div>
@@ -896,7 +947,6 @@ const TABS = [
   "Target Audience",
   "Scope",
   "Campaign Delivery",
-  "Content Ideas",
   "Campaign Timeline",
   "Production & Next Steps",
 ];
@@ -909,7 +959,6 @@ function renderTab(tab) {
     case "Target Audience":         return <AudienceContent />;
     case "Scope":                   return <ScopeContent />;
     case "Campaign Delivery":       return <DeliveryContent />;
-    case "Content Ideas":           return <ContentIdeasContent />;
     case "Campaign Timeline":       return <TimelineContent />;
     case "Production & Next Steps": return <NextStepsContent />;
     default: return null;
