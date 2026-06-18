@@ -275,33 +275,40 @@ function MessagingContent() {
         <div className="grid gap-5 lg:grid-cols-2">
           <Card title="Brand Messaging">
             <BulletList items={[
-              "Being around for 20 years.",
-              "Aussie owned, Customer service in AU,",
-              "We consider ourselves a premium brand, however we are reasonably priced, so value is still a message.",
-              "backed by global, 14 day cooling off, and these are all part of the piece of mind,",
-              "we win lots of awards such as finder etc. etc.",
-              "Flexible quoting",
+              "Australian-owned and operated",
+              "Australian-based customer support",
+              "Backed by a global insurance network",
+              "Flexible and easy quoting process",
+              "14-day cooling off period",
+              "24/7 emergency assistance worldwide",
+              "Award-winning travel insurance provider",
+              "Strong customer satisfaction and trust credentials",
+              "Premium protection with strong value for money",
             ]} />
           </Card>
           <div className="space-y-4">
             <Card title="Product Messaging">
               <BulletList items={[
-                "The things that go wrong in Bali",
-                "For example - if you're admitted into hospital with Bali Belly.",
-                "Cover up to 125,000 per week, most people buy comprehensive - add ons are for: motorbike within a certain CC are automatic, some adventure are covered, renting a vehicle you pay more.. Scooter included.",
+                "Scooter and motorcycle incidents while travelling",
+                "Medical expenses from Bali Belly and hospital admissions",
+                "Adventure activity incidents and travel disruptions",
+                "Overseas emergency medical and evacuation cover",
+                "Comprehensive and add-on options available",
               ]} />
             </Card>
             <div className="rounded-2xl border border-[#e5e5e5] bg-white p-5">
-              <p className="mb-2 text-sm font-medium text-[#1a1a1a]">* Mandatory claims or compliance requirements</p>
+              <p className="mb-2 text-sm font-medium text-[#1a1a1a]">Compliance & Content Approach</p>
               <p className="text-sm leading-6 text-[#666]">
-                Written in a factual nature, can't provide any advice - one cover covers this - is fine. For example.
+                All content must be factual in nature — no financial or insurance advice. All articles and posts to be reviewed and approved through client sign-off prior to publishing.
               </p>
             </div>
             <div className="rounded-2xl border border-[#e5e5e5] bg-white p-5">
               <p className="mb-2 text-sm font-medium text-[#1a1a1a]">Trust Messaging</p>
-              <p className="text-sm leading-6 text-[#666]">
-                'We've covered millions of travellers' — 4.2 from over 5000 reviews on product review. 24/7 emergency assistance anywhere in the world.
-              </p>
+              <BulletList items={[
+                "4.2-star rating from 5,000+ reviews on Product Review",
+                "24/7 emergency assistance anywhere in the world",
+                "20+ years protecting Australian travellers",
+              ]} />
             </div>
           </div>
         </div>
